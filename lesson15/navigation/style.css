@@ -1,3 +1,36 @@
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: blue;
+    text-align: center;
+}
+
+nav ul li{
+    display: inline;
+}
+
+nav ul li a{
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 30px;         
+}
+
+.active a{
+    color: red;
+}
+
+nav ul li a:hover {
+    background-color: green;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+}
+
+
 #static{
     position:static;
     border: 2px solid black;
@@ -45,9 +78,3 @@
 
 }
 
-#sticky{
-    position: sticky;
-    background-color: bisque;
-    padding:20px;
-    top: 0px;
-}
