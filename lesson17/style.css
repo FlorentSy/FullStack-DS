@@ -80,3 +80,17 @@ h1{
     width: 100px;
     height: 100px;
 }
+
+#example-four{
+    background-color: darkgreen;
+    border-radius:10px/30px;
+    width: 100px;
+    height: 100px;
+}
+
+#example-five{
+    background-color: coral;
+    border-radius:30px/10px;
+    width: 100px;
+    height: 100px;
+}
