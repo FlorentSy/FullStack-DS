@@ -1,0 +1,52 @@
+div.gallery{
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+
+}
+
+div.gallery img{
+    width: 100%;
+    height: auto;
+}
+
+div.desc{
+    padding: 15px;
+    text-align: center;
+}
+
+a{
+    color: red;
+}
+
+a[href="https://facebook.com/"]{
+    color: blue;
+}
+p[class*="ds"]{
+    background-color:blue ;
+    color: white;
+    padding: 20px;
+}
+
+div[id~="ds"]{
+    background-color: green; /* space plus ds*/
+    color: white;
+    padding: 20px;
+}
+
+div[id^="ds"]{
+    background: red; /* fillon me ds*/
+    color: white;
+    padding: 20px;
+}
+
+div[id|="ds"]{
+    background: purple; /* fillon me ds*/
+    color: white;
+    padding: 20px;
+}
+
+input[readonly]{
+    border: 2px solid green;
+}
