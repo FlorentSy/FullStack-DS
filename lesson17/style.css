@@ -1,0 +1,82 @@
+.dropdown{
+    position:relative;
+    display: inline-block;
+}
+.dropdown-content{
+    display: none;
+    background-color: #f9f9f9;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgb(0,0,0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+
+}
+
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+
+.tooltip{
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext{
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    z-index: 1;
+}
+.tooltip:hover .tooltiptext{
+    visibility: visible;
+}
+
+body{
+    counter-reset: number;
+
+}
+
+h2::before{
+    counter-increment: number;
+    content:counter(number);
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px 12px;
+    color: #00014e;
+    margin: 10px;
+}
+
+:root{
+    --primary-color:#06206a;
+}
+
+h1{
+    color:var(--primary-color)
+}
+
+#example-one{
+    border-radius: 30px;
+    background-color: crimson;
+    width: 100px;
+    height: 100px;
+}
+
+#example-two{
+    border: 3px solid blue;
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+#example-three{
+    background-color: coral;
+    border-radius:5px 60px 5px;
+    width: 100px;
+    height: 100px;
+}
