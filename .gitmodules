@@ -1,0 +1,27 @@
+[submodule "lesson10"]
+	path = lesson10
+	url = https://github.com/FlorentSy/lesson10
+[submodule "lesson6"]
+	path = lesson6
+	url = https://github.com/FlorentSy/lesson6
+[submodule "Lesson-3"]
+	path = Lesson-3
+	url = https://github.com/FlorentSy/Lesson-3
+[submodule "L11"]
+	path = L11
+	url = https://github.com/FlorentSy/L11
+[submodule "lesson5"]
+	path = lesson5
+	url = https://github.com/FlorentSy/lesson5
+[submodule "lesson8"]
+	path = lesson8
+	url = https://github.com/FlorentSy/lesson8
+[submodule "lesson7"]
+	path = lesson7
+	url = https://github.com/FlorentSy/lesson7
+[submodule "demo-repo"]
+	path = demo-repo
+	url = https://github.com/FlorentSy/demo-repo
+[submodule "Lesson13"]
+	path = Lesson13
+	url = https://github.com/FlorentSy/Lesson13
