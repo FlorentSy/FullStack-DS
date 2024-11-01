@@ -1,4 +1,5 @@
 console.log('welcome')
+document.write("welcome")
 
 function showMessage(){
     alert("This is inside a function")
