@@ -1,0 +1,11 @@
+#txt1{
+    color:red;
+    background-color:lightgrey;
+    align-items:center;
+    font-size:100px;
+    padding:20px;
+    margin-top:100px;
+    border: 1px solid black;
+    transition: 1s ease;
+    transform: scale(0.9);
+}
