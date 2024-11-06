@@ -1,7 +1,21 @@
 var noon = 12;
-var wakeuptime = 6;  // Default values
-var dstime = 15;  // Default values
-var sleeptime = 22;  // Default values
+var wakeuptime, dstime, sleeptime;  // No default values here
+
+function initializeTimes() {
+    // Get initial values from selectors
+    var wakeUpTimeSelector = document.getElementById("wakeUpTimeSelector");
+    wakeuptime = parseInt(wakeUpTimeSelector.value, 10);
+
+    var dsTimeSelector = document.getElementById("dsTimeSelector");
+    dstime = parseInt(dsTimeSelector.value, 10);
+
+    var sleepTimeSelector = document.getElementById("sleepTimeSelector");
+    sleeptime = parseInt(sleepTimeSelector.value, 10);
+
+    // Update the image based on initial times
+    changeImage();
+}
+
 function showCurrentTime() {
     var clock = document.getElementById("clock");
     var currentTime = new Date();
@@ -10,25 +24,23 @@ function showCurrentTime() {
     var minutes = currentTime.getMinutes();
     var seconds = currentTime.getSeconds();
 
-    var meridian = hours >= 12 ? "PM" : "AM";
-    hours = hours % 12 || 12; // Convert to 12-hour format
+    var meridian = "AM";
 
-    if (minutes < 10) {
-        minutes = "0" + minutes;
-    }
-    if (seconds < 10) {
-        seconds = "0" + seconds;
+    if (hours >= noon) {
+        meridian = "PM";
     }
 
     var clockTime = hours + " : " + minutes + " : " + seconds + " " + meridian;
     clock.innerHTML = clockTime;
-    changeImage();  // Ensure image updates based on current time
+    changeImage();
 }
 
-setInterval(showCurrentTime, 1000);
+var oneSecond = 1000;
+setInterval(showCurrentTime, oneSecond);
 
 function changeImage() {
     var time = new Date().getHours();
+    console.log(time);
 
     var image = "images/ds_clock.png";
     var imageHTML = document.getElementById("timeImage");
@@ -37,26 +49,28 @@ function changeImage() {
     if ((wakeuptime <= dstime && time >= wakeuptime && time < dstime) ||
         (wakeuptime > dstime && (time >= wakeuptime || time < dstime))) {
         image = "images/morning.gif";  // Morning image
-    } else if ((dstime <= sleeptime && time >= dstime && time < sleeptime) ||
-               (dstime > sleeptime && (time >= dstime || time < sleeptime))) {
+    } 
+    else if ((dstime <= sleeptime && time >= dstime && time < sleeptime) ||
+             (dstime > sleeptime && (time >= dstime || time < sleeptime))) {
         image = "images/class.gif";  // Class image
-    } else {
+    } 
+    else {
         image = "images/night.gif";  // Night image
     }
 
     imageHTML.src = image;  // Update the image source
 }
 
-
 function updateClock() {
     // Get the selected times from the selectors
     var wakeUpTimeSelector = document.getElementById("wakeUpTimeSelector");
-    var dsTimeSelector = document.getElementById("DSTimeSelector");
-    var sleepTimeSelector = document.getElementById("sleepTimeSelector");
+    wakeuptime = parseInt(wakeUpTimeSelector.value, 10);
 
-    wakeuptime = parseInt(wakeUpTimeSelector.value, 10);  // Store as integer
-    dstime = parseInt(dsTimeSelector.value, 10);  // Store as integer
-    sleeptime = parseInt(sleepTimeSelector.value, 10);  // Store as integer
+    var dsTimeSelector = document.getElementById("dsTimeSelector");
+    dstime = parseInt(dsTimeSelector.value, 10);
+
+    var sleepTimeSelector = document.getElementById("sleepTimeSelector");
+    sleeptime = parseInt(sleepTimeSelector.value, 10);
 
     changeImage();  // Update the image immediately after changing time settings
 }
@@ -64,3 +78,5 @@ function updateClock() {
 var saveButton = document.getElementById("saveButton");
 saveButton.addEventListener("click", updateClock);
 
+// Call initializeTimes on page load to set initial values
+window.onload = initializeTimes;
