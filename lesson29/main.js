@@ -34,7 +34,6 @@ function validate(){
         }
         if(!(age.match(valid_age))){
             document.getElementById("age_error").style.visibility="visible";
-            
         }
         if(city==''){
             document.getElementById("city_error").style.visibility="visible";
