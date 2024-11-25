@@ -1,3 +1,3 @@
-http://localhost/DS-Repo-PHP/FullStack-DS/PHPLesson40/index.php
+http://localhost/DS-Repo/FullStack-DS/PHPLesson40/index.php
 
  git clone https://github.com/FlorentSy/FullStack-DS.git 
