@@ -30,6 +30,7 @@ if($num <18){
 //     echo " The number is a positive number";
 // }
 
+/*
 
 //Switch
 
@@ -65,5 +66,47 @@ switch($day){
     break;
 }
 
+*/
+//While loops
+
+/*
+$x = 1;
+
+while($x <=5){
+    echo "The number is: $x <br>";
+    $x++;
+}
+*/
+
+/*
+
+//Do while
+$x = 1;
+do{
+    echo "The number is: $x <br>";
+    $x++;
+}while ($x <= 2);
+*/
+
+
+
+/*
+//For loops
+
+for ($x=0; $x<=10; $x++){
+    echo "The number is: $x <br>";
+}
+
+*/
+
+//for each
+
+$cars = array("BMW" => "18", "AUDI" => "20", "Tesla" => "22", "MBenz" => "24");
+
+foreach($cars as $x => $value){
+    echo "$x => $value <br>";
+}
+
 
 ?>
+
