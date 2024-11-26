@@ -16,7 +16,7 @@ echo gettype($z) . "<br>";
 
 
 function displayVersion(){
-    echo "this is your php version".phpversion();
+    echo "this is your php version".phpversion() ."<br>";
     echo "\n";
 }
 
