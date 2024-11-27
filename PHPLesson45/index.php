@@ -51,4 +51,35 @@ echo "</tr>";
 }
 
 echo "</table>";
+
+//Nested loops
+
+            // $arrays = array(
+            //     array(1,2,3),
+            //     array(4,5,6),
+            //     array(7,8,9),
+            // );
+
+            // for($i = 1; $i<4; $i++){
+            //     for($j = 1; $j<10 ; $j++){
+            //         echo "Array $i, Element : $j <br>";
+            //     }
+// }
+
+
+            
+$grade = array(
+    "Math" => "5",
+    "Art" => "3",
+    "Physics" => "5",
+    "History" => "4",
+
+);
+//echo "Math grade is:" . $grade["Math"];
+
+foreach($grade as $subject => $grade){
+    echo "Subject: " . $subject . ", Grade: " . $grade;
+    echo "<br>";
+}
+
 ?>
