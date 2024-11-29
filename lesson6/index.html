@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lesson6</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Personal Information</legend>
+        <label for="firstname">First name:</label><br>
+        <input type="text" id="firstname" name="firstname" value="John" readonly><br>
+        <label for="lastname">Last name:</label><br>
+        <input type="text" id="lastname" name="lastname" disabled><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" size="40" required ><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" placeholder="Password"><br><br>
+        <label>Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label>Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label>Female</label><br><br>
+        <label>Hobbies:</label><br>
+        <input type="checkbox" id="gaming" name="gaming" value="Gaming">
+        <label for="gaming">Gaming</label><br>
+        <input type="checkbox" id="football" name="football" value="Football">
+        <label for="football">Football</label><br>
+        <input type="checkbox" id="swimming" name="swimming" value="Swimming">
+        <label for="swimming">Swimming</label><br><br>
+        <label for="pets">Choose a pet:</label>
+        <select id="pet" name="pet">
+            <option value="Dog">Dog</option>
+            <option value="Cat">Cat</option>
+            <option value="Parrot">Parrot</option>
+        </select><br>
+        <textarea name="message" rows="10" cols="20" maxlength="50"></textarea><br>
+        <br>
+        <input type="submit" id="submit" name="submit"><br>
+    </fieldset>
+    </form>
+    <hr>
+
+    <article>
+        <h2>This is an article</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima officia dolorem ut quas ab. 
+            Suscipit cum vitae ipsa eos cupiditate beatae ducimus odio laboriosam expedita culpa reprehenderit maxime, ut autem.</p>
+    </article>
+
+    <details>
+        <summary>Digital School</summary>
+        <p>Digital School is an instituion which offers programming courses for everyone!</p>
+    </details>
+    <hr>
+    <figure>
+        <img src="https://media.licdn.com/dms/image/D4D12AQF6mW4EuB-99Q/article-cover_image-shrink_720_1280/0/1692951785182?e=2147483647&v=beta&t=I6_1-aBTAg0fihJHret-C4hRNuffBu8JyrqKfXsm74w" width="250" height="250">
+        <figcaption>Fig.1 - Coding Picture</figcaption>
+    </figure>
+    <hr>
+    <section>
+        <h2>Introduction</h2>
+        <p>This course will teach you how to create websites using HTML,CSS and JS</p>
+    </section>
+</body>
+</html>
