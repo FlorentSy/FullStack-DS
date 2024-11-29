@@ -1,0 +1,65 @@
+p{
+	margin-top: 100px;
+	margin-bottom: 100px;
+	margin-right: 150px;
+	margin-left: 80px;
+
+	background-color: lightgrey;
+
+}
+
+/*Margin propery shorthand
+
+p{
+	margin: 100px 150px 100px 80px;
+}
+
+*/
+
+
+
+
+/*Margin property with one value
+
+p{
+	margin: 1px;
+}
+
+*/
+
+/*Margin property with three value
+
+p{
+	margin:25px 50px 75px;
+}
+
+*/
+
+div{
+	/*padding-top: 50px;
+	padding-right: 30px;
+	padding-bottom: 50px;
+	padding-left: 80px;
+	*/
+
+	/*height: 100px;
+	width:50%;
+	background-color: powderblue;
+	*/
+	
+	width: 300px;
+	border:15px solid green;
+	padding: 50px;
+	margin:20px;
+	background-color: lightgrey;
+
+}
+
+
+/*Padding property shorthand
+
+div{
+	padding:50px 30px 50px 80px;
+}
+
+*/
