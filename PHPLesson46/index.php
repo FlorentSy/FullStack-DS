@@ -3,9 +3,4 @@ echo "Lesson46 <br>";
 
 
 
-
-
-
-
-
 ?>
