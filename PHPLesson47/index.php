@@ -1,19 +1,25 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "";
+ include("database.php");
 
-try {
-    // Create a new connection without specifying the database name
-    $conn = new PDO("mysql:host=$host", $user, $pass);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+ $username = "NewWayUsername";
+ $password = "hashedPassword";
+ //passowrd hashing
+ $hash = password_hash($password, PASSWORD_DEFAULT);
 
-    // SQL statement to create a new database named 'example2'
-    $sql = "CREATE DATABASE example2";
-    $conn->exec($sql);
-    echo "Database 'example2' was created successfully.";
+ $sql = "INSERT INTO users (user, password)
+         VALUES ('$username','$hash')";
 
-} catch (Exception $e) {
-    echo "Failed to create the database: " . $e->getMessage();
+
+try{
+    mysqli_query($conn, $sql);
+    echo "The user is now registered";
+
+}catch(mysqli_sql_exception){
+    echo "Could not register the user";
 }
+ 
+
+
+ mysqli_close($conn);
+
 ?>
