@@ -1,38 +1,3 @@
-
-<!-- php
- // Get and Post methods
-// $username = $_GET['username'];
-// $password = $_GET['password'];
-
-// echo $username;
-// echo "<br>";
-// echo $password;
-
-// php-->
-
-
-<!-- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lesson49</title>
-</head>
-<body>
-    <form action="index.php" method="get">
-        <label for="username">Username:</label> <br>
-        <input type="text" id="username" name="username" placeholder="Username"> <br>
-
-        <label for="password">Password:</label> <br>
-        <input type="password"  id="password" name="password" placeholder="Password">
-        
-        <input type="submit" value="Submit">
-    </form>
-</body>
-</html> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,6 +60,8 @@ $users = $getUsers -> fetchAll();
                     <td> <?= $user['username']?> </td>
                     <td> <?= $user['email']?> </td>
                     <td><?= "<a href='delete.php?id=$user[id]'> Delete </a>" ?> </td>
+                    <td><?= "<a href='edit.php?id=$user[id]'> Update </a>" ?> </td>
+
                 </tr>
             
         <?php 
