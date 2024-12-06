@@ -54,7 +54,7 @@
         a{
             border: 1px solid green;
             border-radius: 10px;
-            padding: 10px;
+            padding: 5px;
             background-color: green;
             color: white;
             text-decoration: none;
@@ -94,6 +94,7 @@ $users = $getUsers -> fetchAll();
                     <td> <?= $user['name']?> </td>
                     <td> <?= $user['username']?> </td>
                     <td> <?= $user['email']?> </td>
+                    <td><?= "<a href='delete.php?id=$user[id]'> Delete </a>" ?> </td>
                 </tr>
             
         <?php 
