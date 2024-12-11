@@ -49,11 +49,10 @@ $users = $getUsers -> fetchAll();
         </thead>
     
 
-    <tbody>
+     <tbody>
         <?php 
             foreach ($users as $user){
         ?>
-
                 <tr>
                     <td> <?= $user['id']?> </td>
                     <td> <?= $user['name']?> </td>
@@ -63,13 +62,11 @@ $users = $getUsers -> fetchAll();
                     <td><?= "<a href='edit.php?id=$user[id]'> Update </a>" ?> </td>
 
                 </tr>
-            
         <?php 
             }
         ?>
         
-       
-    </tbody>
+     </tbody>
     </table>
 
     <a href="index.html">Add User</a>
