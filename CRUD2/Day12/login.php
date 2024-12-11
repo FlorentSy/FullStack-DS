@@ -1,4 +1,6 @@
-<?php include("header.php"); ?>
+<?php include("header.php"); 
+include_once("config.php");
+?>
 	
 	<div class="login">
 
@@ -17,6 +19,7 @@
 			
 			<small>Don't have account ? <a href="signup.php">Sign Up</a></small>
 
+			<a href="logout.php">log out</a>
 			<p class="mt-5 mb-3 text-muted">Digital School  &copy; 2024</p>
 		</form>
 

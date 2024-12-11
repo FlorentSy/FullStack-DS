@@ -1,4 +1,6 @@
-<?php include("header.php"); ?>
+<?php include("header.php"); 
+	session_start();
+?>
 
 <div class="signup">
 		
@@ -23,6 +25,10 @@
 		<input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
 
 		<button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Sign up</button>
+
+		<?php 
+			echo $_SESSION['name'];
+		?>
 
 		<small>Already have account? <a href="login.php">Log In</a></small>
 
