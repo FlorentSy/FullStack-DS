@@ -43,7 +43,7 @@
 		table {
 			border: 1px solid black;
 			margin-bottom: 10px;
-			background-color: lightgray;
+			background-color: #F4F9F4;
 			color: black;
 			width: 100%;
 		}
