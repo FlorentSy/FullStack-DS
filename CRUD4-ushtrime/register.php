@@ -4,13 +4,12 @@
     if(isset($_POST['submit'])){
 
         $name= $_POST['name'];
-        $surname= $_POST['surname'];
         $username= $_POST['username'];
         $email= $_POST['email'];
         $tempPassword = $_POST['password'];
         $password = password_hash($tempPassword, PASSWORD_DEFAULT);
 
-        if(empty($name) || empty($surname) || empty($username) || empty($email) || empty($password) ){
+        if(empty($name) || empty($username) || empty($email) || empty($password) ){
             echo "Mbushi te gjitha fushat!";
         }
         else{
@@ -26,14 +25,13 @@
             header("Location: signup.php");
         }
         else{
-            $sql = "INSERT into users (name, surname, username, email, password) 
+            $sql = "INSERT into users (name, username, email, password) 
             values 
-            (:name, :surname, :username, :email, :password)";
+            (:name, :username, :email, :password)";
 
             $insertSql = $conn->prepare($sql);
 
             $insertSql->bindparam(":name", $name);
-            $insertSql->bindparam(":surname", $surname);
             $insertSql->bindparam(":username", $username);
             $insertSql->bindparam(":email", $email);
             $insertSql->bindparam(":password", $password);

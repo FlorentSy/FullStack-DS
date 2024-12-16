@@ -7,8 +7,8 @@
 
         $username = $_POST['username'];
 	    $name = $_POST['name'];
-		$surname = $_POST['surname'];
 		$password = $_POST['password'];
+		$confirm_password = $_POST['confirm_password'];
 		$email = $_POST['email'];
 
 

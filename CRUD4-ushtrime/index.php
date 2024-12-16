@@ -37,10 +37,6 @@
                         <input type="text" id="name" name="name" class="form-control" placeholder="Enter name" required>
                     </div>
                     <div class="mb-3">
-                        <label for="surname" class="form-label">Surname</label>
-                        <input type="text" id="surname" name="surname" class="form-control" placeholder="Enter surname" required>
-                    </div>
-                    <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
                         <input type="password" id="password" name="password" class="form-control" placeholder="Enter password" required>
                     </div>

@@ -74,11 +74,6 @@ $data = $prep->fetch();
         </div>
 
         <div class="mb-3">
-            <label for="surname" class="form-label">Surname</label>
-            <input type="text" name="surname" id="surname" class="form-control" value="<?php echo $data['surname'] ?>">
-        </div>
-
-        <div class="mb-3">
             <label for="email" class="form-label">Email</label>
             <input type="email" name="email" id="email" class="form-control" value="<?php echo $data['email'] ?>">
         </div>

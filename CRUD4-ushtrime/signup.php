@@ -16,8 +16,8 @@ if (isset($_POST['submit'])) {
         <label for="inputName" class="sr-only">Name</label>
         <input type="text" id="inputName" class="form-control" placeholder="Name" name="name" required autofocus>
 
-        <label for="inputSurname" class="sr-only">Username</label>
-        <input type="text" id="inputSurname" class="form-control" placeholder="Username" name="username" required>
+        <label for="inputUsername" class="sr-only">Username</label>
+        <input type="text" id="inpuUsername" class="form-control" placeholder="Username" name="username" required>
 
         <label for="inputEmail" class="sr-only">Email</label>
         <input type="email" id="inputEmail" class="form-control" placeholder="Email" name="email" required>
