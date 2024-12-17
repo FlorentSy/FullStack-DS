@@ -1,6 +1,4 @@
-<?php include("header.php"); 
-include_once("config.php");
-?>
+<?php include("header.php"); ?>
 	
 	<div class="login">
 
@@ -15,11 +13,11 @@ include_once("config.php");
 			<input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
 
 
-			<button class="btn btn-lg btn-success btn-block" type="submit" name="submit">Sign in</button>
+			<button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Sign in</button>
 			
-			Don't have account ? <a href="signup.php">Sign Up</a>
+			<small>Don't have account ? <a href="signup.php">Sign Up</a></small>
 
-			<p class="mt-5 mb-3 text-muted">Digital School  &copy; 2024</p>
+			<p class="mt-5 mb-3 text-muted">Digital School  &copy; 2023</p>
 		</form>
 
 	</div>

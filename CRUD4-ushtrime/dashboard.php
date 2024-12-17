@@ -1,189 +1,126 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Dashboard</title>
-	<style>
-		/* General Styling */
-		body {
-			font-family: Arial, sans-serif;
-			margin: 0;
-			padding: 0;
-		}
+<?php 
+	include_once('config.php'); 
 
-		/* Top Navbar Styling */
-		.topnav {
-			background-color: #333;
-			overflow: hidden;
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			z-index: 10; /* Ensures the navbar is above all elements */
-		}
+	if(empty($_SESSION['username']))
+	{
+		header('Location: login.php');
+	}
+  $sql = "SELECT * FROM users";
+  $selectUsers = $conn->prepare($sql);
+  $selectUsers->execute();
 
-		.topnav a {
-			float: left;
-			color: white;
-			text-align: center;
-			padding: 14px 20px;
-			text-decoration: none;
-			font-size: 17px;
-		}
+  $users_data = $selectUsers->fetchAll();
 
-		.topnav a:hover {
-			background-color: #575757;
-			color: white;
-		}
+?>
 
-		.topnav input[type=text] {
-			float: right;
-			padding: 6px;
-			border: none;
-			margin-top: 8px;
-			margin-right: 16px;
-			font-size: 17px;
-			width: 300px;
-			border-radius: 5px;
-		}
+<?php include("header.php"); ?>
 
-		/* Layout with Sidebar and Content */
-		.layout {
-			display: flex;
-			margin-top: 50px; /* Space for the fixed navbar */
-		}
+<style>
+		
+  table
+  {
+    border: 1px solid black;
+  }
 
-		/* Sidebar Styling */
-		.sidebar {
-			width: 250px;
-			height: 100vh;
-			background-color: #333;
-			color: white;
-			display: flex;
-			flex-direction: column;
-			padding-top: 20px;
-			box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.3);
-			position: fixed;
-			left: 0;
-			top: 50px; /* Align below the top navbar */
-		}
+  tr,td,th
+  {
+    border: 1px solid black;
+    
+  }
+  table,tr,td
+  {
+    border-collapse: collapse;
+  }
+  td
+  {
+    padding: 10px;
+  }
 
-		.sidebar a {
-			text-decoration: none;
-			color: white;
-			padding: 15px 20px;
-			font-size: 18px;
-			transition: background 0.3s;
-		}
+</style>
 
-		.sidebar a:hover {
-			background-color: #575757;
-		}
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Welcome, <i> <?php echo $_SESSION['username']; ?> </i></a>
+  <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link" href="logout.php">Sign out</a>
+    </li>
+  </ul>
+</nav>
 
-		/* Content Styling */
-		.content {
-			margin-left: 250px;
-			margin-top: 50px; /* Space for the fixed navbar */
-			padding: 20px;
-			width: calc(100% - 250px);
-		}
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="dashboard.php">
+              <span data-feather="home"></span>
+              Dashboard <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+          <?php foreach ($users_data as $user_data) { ?>
 
-		/* Table Styling */
-		table {
-			border: 1px solid black;
-			background-color: #F4F9F4;
-			color: black;
-			width: 100%;
-			border-collapse: collapse;
-		}
+            <a class="nav-link" href="profile.php?id=<?= $user_data['id'];?>">
+            <?php  } ?>
+              <span data-feather="file"></span>
+              Edit Profile
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-		th, td {
-			border: 1px solid black;
-			padding: 10px;
-			text-align: center;
-		}
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Dashboard</h1>
+      </div>  
 
-		td a {
-			text-decoration: none;
-			color: white;
-			padding: 5px 10px;
-			background-color: green;
-			border-radius: 5px;
-		}
+      <div>
+        <?php 
 
-		td a:hover {
-			background-color: darkgreen;
-		}
+        include_once('config.php');
 
-		.add-user-btn {
-			text-decoration: none;
-			color: white;
-			padding: 10px;
-			background-color: green;
-			border-radius: 5px;
-			display: inline-block;
-			margin-top: 10px;
-		}
+        $getUsers = $conn->prepare("SELECT * FROM users");
 
-		.add-user-btn:hover {
-			background-color: darkgreen;
-		}
-	</style>
-</head>
-<body>
-	<!-- Top Navigation Bar -->
-	<div class="topnav">
-		<a href="home.php">Home</a>
-		<input type="text" placeholder="Search..">
-	</div>
+        $getUsers->execute();
 
-	<!-- Sidebar and Content -->
-	<div class="layout">
-		<!-- Sidebar -->
-		<div class="sidebar">
-			<h2 style="text-align: center;">Menu</h2>
-			<a href="home.php">Home</a>
-			<a href="dashboard.php">Dashboard</a>
-			<a href="movies.php">Movies</a>
-			<a href="bookings.php">Bookings</a>
-		</div>
+        $users = $getUsers->fetchAll();
 
-		<!-- Content -->
-		<div class="content">
-			<?php 
-				include_once('config.php');
-				$getUsers = $conn->prepare("SELECT * FROM users");
-				$getUsers->execute();
-				$users = $getUsers->fetchAll();
-			?>
-			<h2>Dashboard</h2>
-			<table>
-				<thead>
-					<tr>
-						<th>ID</th>
-						<th>Name</th>
-						<th>Username</th>
-						<th>Email</th>
-						<th>Actions</th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php foreach ($users as $user): ?>
-					<tr>
-						<td><?= $user['id'] ?></td>
-						<td><?= $user['name'] ?></td>
-						<td><?= $user['username'] ?></td>
-						<td><?= $user['email'] ?></td>
-						<td>
-							<a href="delete.php?id=<?= $user['id'] ?>">Delete</a> 
-							<a href="edit.php?id=<?= $user['id'] ?>">Update</a>
-						</td>
-					</tr>
-					<?php endforeach; ?>
-				</tbody>
-			</table>
-			<a href="index.php" class="add-user-btn">Add User</a>
-		</div>
-	</div>
-</body>
-</html>
+        ?>
+
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Username</th>
+              <th>Name</th>
+              <th>Surname</th>
+              <th>Email</th>
+              <th>Update</th>
+            </tr>
+          </thead>
+          <?php
+            foreach ($users as $user ) {
+          ?>
+          <tbody>
+            <tr> 
+              <td> <?= $user['id'] ?> </td>
+              <td> <?= $user['username'] ?> </td>
+              <td> <?= $user['name']  ?> </td> 
+              <td> <?= $user['surname']  ?> </td> 
+              <td> <?= $user['email']  ?> </td>
+              <td> <?= "<a href='delete.php?id=$user[id]'> Delete</a>| <a href='profile.php?id=$user[id]'> Update </a>"?></td>
+            </tr>
+          
+            <?php 
+              }
+            ?>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</div>
+
+<?php include("footer.php"); ?>

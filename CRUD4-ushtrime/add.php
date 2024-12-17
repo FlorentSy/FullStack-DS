@@ -1,45 +1,39 @@
 <?php
 
-	include_once('config.php');
+	include_once('config.php');	
 
 	if(isset($_POST['submit']))
 	{
-
-        $username = $_POST['username'];
-	    $name = $_POST['name'];
-		$password = $_POST['password'];
-		$confirm_password = $_POST['confirm_password'];
+		$name = $_POST['name'];
+		$surname = $_POST['surname'];
 		$email = $_POST['email'];
 
+		
+        $sql = "insert into user (name, surname, email) values (:name, :surname, :email)";
+        $sqlQuery = $conn->prepare($sql);
+    
+        $sqlQuery->bindParam(':name', $name); 
+        $sqlQuery->bindParam(':surname', $surname); 
+        $sqlQuery->bindParam(':email', $email);
 
-			$sql = "INSERT INTO users(username,name,email,password,confirm_password) VALUES (:username, :name, :email, :password, :confirm_password)";
+        $sqlQuery->execute();
 
-			$insertSql = $conn->prepare($sql);
-
-			$insertSql->bindParam(':username', $username);
-			$insertSql->bindParam(':name', $name);
-			$insertSql->bindParam(':email', $email);
-			$insertSql->bindParam(':password', $password);
-			$insertSql->bindParam(':confirm_password', $password);
-
-			$insertSql->execute();
-
-			echo "The user has been added successfully";
-
-			echo "<br>";
-
-			echo "<a href='dashboard.php'>Dashboard</a>";
-
+        echo "Data saved successfully ...<br>";
 	}
-
-
 ?>
-<style>
-	a{
-		margin: 5px;
-		padding: 5px;
-		text-decoration: none;
-		background-color: blue;
-		color: white;
-	}
-</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add a user</title>
+</head>
+<body>
+<a href="index.php">Dashboard</a>
+    <form action="add.php" method="POST">
+        <input type="text" name="name" placeholder="Name"></br>
+        <input type="text" name="surname" placeholder="Surname"></br>
+        <input type="email" name="email" placeholder="Email"></br>
+        <button type="submit" name="submit">Add</button>
+    </form>
+</body>
+</html>
