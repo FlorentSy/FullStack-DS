@@ -7,7 +7,7 @@ session_start();
 		header('Location: login.php');
 	}
 
-  $id = $_GET['id'];
+   $id = $_GET['id'];
    $sql = "SELECT * FROM users WHERE id=:id";
    $selectUser = $conn->prepare($sql);
    $selectUser->bindParam(':id', $id);
