@@ -10,7 +10,7 @@
     $stmt->execute([$_SESSION['username']]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     
-    $is_admin = $user ? $user['is_admin'] : 0;
+  $is_admin = $user ? $user['is_admin'] : 0;
   $sql = "SELECT * FROM users";
   $selectUsers = $conn->prepare($sql);
   $selectUsers->execute();
