@@ -74,13 +74,13 @@
             </a>
           </li>
 		  <li class="nav-item">
-				<a class="nav-link" href="<?php echo ($is_admin == 1) ? 'bookings.php' : 'bookings2.php'; ?>">
+				<a class="nav-link" href="bookings.php">
 					<span data-feather="calendar"></span>
 					Bookings
 				</a>
 		  </li>
 			<li class="nav-item">
-				<a class="nav-link" href="<?php echo ($is_admin == 1) ? 'movies.php' : 'movies2.php'; ?>">
+				<a class="nav-link" href="movies.php ">
 					<span data-feather="film"></span>
 					Movies
 				</a>

@@ -79,7 +79,7 @@
                         <a class="nav-link" href="movies_dashboard.php">Movies Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo ($is_admin == 1) ? 'movies.php' : 'movies2.php'; ?>">Movies</a>
+                        <a class="nav-link" href="movies.php ">Movies</a>
                     </li>
                 </ul>
             </div>
