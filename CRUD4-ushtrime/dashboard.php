@@ -67,24 +67,24 @@
           <li class="nav-item">
           <?php foreach ($users_data as $user_data) { ?>
 
-            <a class="nav-link" href="profile.php?id=<?= $user_data['id'];?>">
+           
             <?php  } ?>
-              <span data-feather="file"></span>
+              <span data-feather="file">  <a class="nav-link" href="profile.php?id=<?= $user_data['id'];?>"></span>
               Edit Profile
             </a>
           </li>
 		  <li class="nav-item">
-    <a class="nav-link" href="<?php echo ($is_admin == 1) ? 'bookings.php' : 'bookings2.php'; ?>">
-        <span data-feather="calendar"></span>
-        Bookings
-    </a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="<?php echo ($is_admin == 1) ? 'movies.php' : 'movies2.php'; ?>">
-        <span data-feather="film"></span>
-        Movies
-    </a>
-</li>
+				<a class="nav-link" href="<?php echo ($is_admin == 1) ? 'bookings.php' : 'bookings2.php'; ?>">
+					<span data-feather="calendar"></span>
+					Bookings
+				</a>
+		  </li>
+			<li class="nav-item">
+				<a class="nav-link" href="<?php echo ($is_admin == 1) ? 'movies.php' : 'movies2.php'; ?>">
+					<span data-feather="film"></span>
+					Movies
+				</a>
+			</li>
 
         </ul>
       </div>
