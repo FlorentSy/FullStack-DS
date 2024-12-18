@@ -1,4 +1,10 @@
-<?php include("header.php"); ?>
+<?php include("header.php"); 
+session_start();
+$user_id = $_SESSION['user_id'] ?? null; // Replace with actual session logic
+
+// Fetch movie_id dynamically
+$movie_id = $_GET['movie_id'] ?? null; // Replace with actual parameter logic
+?>
 
     <style>
         /* General Reset */
@@ -87,10 +93,12 @@ form button:hover {
             </div>
 
             <!-- Registration Form -->
-            <form action="#" method="POST">
+            <form action="bookings.php" method="POST">
+            <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+            <input type="hidden" name="movie_id" value="<?php echo $movie_id; ?>">
                 <!-- Number of tickets -->
                 <label for="tickets">Number of tickets</label>
-                <input type="number" id="tickets" name="tickets" min="1" max="5" required>
+                <input type="number" id="tickets" name="tickets" min="1" max="10" required>
                 <!-- Date -->
                 <label for="date">Date</label>
                 <input type="date" id="date" name="date" required>
