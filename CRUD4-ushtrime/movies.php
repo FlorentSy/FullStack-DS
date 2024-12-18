@@ -94,7 +94,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Prison Break</h5>
                         <p class="card-text">Architect Michael Scofield gets himself imprisoned to break out his wrongly convicted brother, Lincoln Burrows...</p>
-                        <a href="#" class="btn btn-primary">Book Now</a>
+                        <a href="details.php" class="btn btn-primary">Book Now</a>
                     </div>
                 </div>
 
@@ -104,7 +104,7 @@
                     <div class="card-body">
                         <h5 class="card-title">A Beautiful Mind</h5>
                         <p class="card-text">"A Beautiful Mind" portrays the life of John Nash, a brilliant but troubled mathematician...</p>
-                        <a href="#" class="btn btn-primary">Book Now</a>
+                        <a href="details2.php" class="btn btn-primary">Book Now</a>
                     </div>
                 </div>
             </div>

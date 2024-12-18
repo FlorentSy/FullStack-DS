@@ -47,7 +47,62 @@ include_once('config.php');
         .desc-th {
             font-size: 10px;
         }
+        .navbar-brand i {
+            font-weight: bold;
+        }
+        .sidebar {
+            height: 100vh;
+            overflow-y: auto;
+        }
+        .mt-4{
+            margin-top: 80px;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+            margin-top: 80px;
+        }
+        .card-text {
+            font-size: 0.9rem;
+        }
+        #dashboard{
+          margin-top: 50px;
+        }
         </style>
+        <nav class="navbar navbar-dark bg-dark fixed-top">
+          <div class="container-fluid">
+              <a class="navbar-brand" href="#">Welcome, <i><?php echo $_SESSION['username']; ?></i></a>
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                      <a class="nav-link text-white" href="logout.php">Sign Out</a>
+                  </li>
+              </ul>
+          </div>
+      </nav>
+      <div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar ">
+            <div class="position-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="dashboard" href="dashboard.php">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="movies_dashboard.php">Movies Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="movies.php ">Movies</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Content -->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <table>
           <thead>
             <tr>
@@ -101,5 +156,7 @@ include_once('config.php');
         </table>
       </div>
     </main>
+</div>
+       
 
 <?php include("footer.php"); ?>
